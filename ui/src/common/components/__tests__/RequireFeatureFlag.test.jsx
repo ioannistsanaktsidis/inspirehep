@@ -5,10 +5,12 @@ import RequireFeatureFlag from '../RequireFeatureFlag';
 
 describe('RequireFeatureFlag', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = {};
   });
 
   it('renders null if flag is false', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = { A_WIP_FEATURE: false };
     const wrapper = shallow(
       <RequireFeatureFlag flag="A_WIP_FEATURE">
@@ -40,6 +42,7 @@ describe('RequireFeatureFlag', () => {
   });
 
   it('renders children if flag is set', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = { A_WIP_FEATURE: true };
     const wrapper = shallow(
       <RequireFeatureFlag flag="A_WIP_FEATURE">

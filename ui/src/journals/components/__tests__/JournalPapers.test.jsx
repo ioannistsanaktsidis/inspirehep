@@ -5,9 +5,7 @@ import JournalPapers from '../JournalPapers';
 
 describe('JournalPapers', () => {
   it('renders', () => {
-    const wrapper = shallow(
-      <JournalPapers journalName="JHEP" />
-    );
+    const wrapper = shallow(<JournalPapers journalName="JHEP" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

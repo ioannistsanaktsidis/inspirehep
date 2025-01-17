@@ -5,6 +5,7 @@ import Banners from '../Banners';
 
 describe('Banners', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = {};
   });
 
@@ -14,6 +15,7 @@ describe('Banners', () => {
   });
 
   it('renders banners if banners config is set', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = {
       BANNERS: [
         {

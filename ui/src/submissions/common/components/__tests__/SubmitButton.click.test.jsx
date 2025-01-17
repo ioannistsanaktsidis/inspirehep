@@ -23,11 +23,13 @@ describe('SubmitButton: click', () => {
         <SubmitButton />
       </FormikContext.Provider>
     );
+    // eslint-disable-next-line no-undef
     global.scrollTo = jest.fn();
     act(() => {
       wrapper.setProps({ value: { ...contextValue, isSubmitting: false } });
       wrapper.update();
     });
+    // eslint-disable-next-line no-undef
     expect(global.scrollTo).toHaveBeenCalled();
   });
 });

@@ -61,7 +61,7 @@ InstitutionSearchPage.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-const stateToProps = state => ({
+const stateToProps = (state) => ({
   loading: state.search.getIn(['namespaces', INSTITUTIONS_NS, 'loading']),
   isSuperUserLoggedIn: isSuperUser(state.user.getIn(['data', 'roles'])),
 });

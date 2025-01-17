@@ -11,9 +11,9 @@ describe('JournalItem', () => {
         publisher: ['Liverpool'],
         urls: [{ value: 'http://url.com' }],
         control_number: 1234,
-        journal_title: {title: 'Department of Physics'},
-        number_of_papers: 2
-      })
+        journal_title: { title: 'Department of Physics' },
+        number_of_papers: 2,
+      }),
     });
 
     const wrapper = shallow(<JournalItem result={result} />);
@@ -26,7 +26,7 @@ describe('JournalItem', () => {
         short_title: 'West Virginia U.',
         control_number: 1234,
         journal_title: 'Department of Physics',
-      })
+      }),
     });
 
     const wrapper = shallow(<JournalItem result={result} />);

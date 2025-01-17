@@ -99,6 +99,7 @@ function fetchCitationsByYearError(error: { error: Error }) {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function fetchCitationsByYear(literatureSearchQuery: {}): (
   dispatch: ActionCreator<Action>,
   getState: () => RootStateOrAny,

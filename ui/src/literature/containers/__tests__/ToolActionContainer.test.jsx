@@ -49,6 +49,7 @@ describe('ToolActionContainer', () => {
   it('passes disabledBulkAssign true', () => {
     const selection = Set([1, 2, 3]);
 
+    // eslint-disable-next-line no-import-assign
     constants.MAX_BULK_ASSIGN = 2;
 
     const store = getStore({

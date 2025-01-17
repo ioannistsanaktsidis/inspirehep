@@ -5,6 +5,7 @@ import SeminarItem from '../SeminarItem';
 import * as constants from '../../../common/constants';
 
 describe('SeminarItem', () => {
+  // eslint-disable-next-line no-import-assign
   constants.LOCAL_TIMEZONE = 'Europe/Zurich';
 
   it('renders with all props set', () => {

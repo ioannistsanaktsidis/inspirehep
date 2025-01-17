@@ -77,7 +77,9 @@ function DetailPage({ record, isSuperUserLoggedIn }) {
                     page="Institutions detail"
                   />
                 </AuthorizedContainer>
-                {isSuperUserLoggedIn && <APIButton url={window.location.href} />}
+                {isSuperUserLoggedIn && (
+                  <APIButton url={window.location.href} />
+                )}
               </>
             }
           >

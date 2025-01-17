@@ -43,6 +43,7 @@ describe('MultiSelectAggregation', () => {
         doc_count: 2,
       },
     ]);
+    // eslint-disable-next-line no-import-assign
     constants.SELECT_VALUE_TO_DISPLAY_MAPS_FOREACH_AGG = {
       Test: {
         bucket: 'Bucket (Cool)',

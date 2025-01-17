@@ -3,9 +3,10 @@ import { RootStateOrAny } from 'react-redux';
 import { replace } from 'connected-react-router';
 import { stringify } from 'qs';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function appendQueryToLocationSearch(query: {}): (
   dispatch: ActionCreator<Action>,
-  getState: () => RootStateOrAny,
+  getState: () => RootStateOrAny
 ) => void {
   return (dispatch, getState) => {
     const { router } = getState();

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -139,9 +138,15 @@ function LiteratureItem({
               />
             )}
             {canEdit && (
-              <EditRecordAction pidType="literature" pidValue={recordId} page={page} />
+              <EditRecordAction
+                pidType="literature"
+                pidValue={recordId}
+                page={page}
+              />
             )}
-            {assignAuthorView && <AssignOneActionContainer recordId={recordId} />}
+            {assignAuthorView && (
+              <AssignOneActionContainer recordId={recordId} />
+            )}
             {assignOwnProfileView && !assignAuthorView && (
               <AssignOneOwnProfileContainer
                 recordId={recordId}
@@ -193,11 +198,12 @@ function LiteratureItem({
                 to={`${LITERATURE}/${recordId}`}
               >
                 <LiteratureTitle title={title} />
-                {(assignAuthorView || assignOwnProfileView) && !curatedRelation && (
-                  <Tooltip title="Unclaimed paper. Click on the Claim button to claim or remove it from the profile">
-                    <FileExclamationTwoTone className="ml1" />
-                  </Tooltip>
-                )}
+                {(assignAuthorView || assignOwnProfileView) &&
+                  !curatedRelation && (
+                    <Tooltip title="Unclaimed paper. Click on the Claim button to claim or remove it from the profile">
+                      <FileExclamationTwoTone className="ml1" />
+                    </Tooltip>
+                  )}
               </Link>
             </div>
             <ResponsiveView
@@ -230,9 +236,12 @@ function LiteratureItem({
           <div className="mt1">
             <InlineUL separator={SEPARATOR_MIDDLEDOT}>
               {bookSeries && <BookSeriesInfoList bookSeries={bookSeries} />}
-              {publicationInfoWithTitle && publicationInfoWithTitle.size > 0 && (
-                <PublicationInfoList publicationInfo={publicationInfoWithTitle} />
-              )}
+              {publicationInfoWithTitle &&
+                publicationInfoWithTitle.size > 0 && (
+                  <PublicationInfoList
+                    publicationInfo={publicationInfoWithTitle}
+                  />
+                )}
               {conferenceInfo && (
                 <ConferenceInfoList
                   conferenceInfo={conferenceInfo}
@@ -241,7 +250,9 @@ function LiteratureItem({
                   }
                 />
               )}
-              {eprints && <ArxivEprintList page="Literature search" eprints={eprints} />}
+              {eprints && (
+                <ArxivEprintList page="Literature search" eprints={eprints} />
+              )}
             </InlineUL>
           </div>
           {isCatalogerLoggedIn && (

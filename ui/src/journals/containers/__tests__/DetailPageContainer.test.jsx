@@ -22,7 +22,7 @@ describe('DetailPageContainer', () => {
               'JOURNL OF HIGH ENERGY PHYSICS',
             ],
             publisher: ['Springer'],
-            control_number: 1234
+            control_number: 1234,
           },
         },
       }),
@@ -35,7 +35,8 @@ describe('DetailPageContainer', () => {
         </Provider>
       </Router>
     );
-    expect(wrapper.find(DetailPage).prop('result')).toMatchObject(Map({
+    expect(wrapper.find(DetailPage).prop('result')).toMatchObject(
+      Map({
         metadata: Map({
           short_title: 'test',
           journal_title: Map({ title: 'test' }),
@@ -46,9 +47,9 @@ describe('DetailPageContainer', () => {
             'JOURNL OF HIGH ENERGY PHYSICS',
           ]),
           publisher: List(['Springer']),
-          control_number: 1234
+          control_number: 1234,
         }),
-      }),
+      })
     );
   });
 });

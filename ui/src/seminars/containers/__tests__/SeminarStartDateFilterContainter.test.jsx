@@ -18,6 +18,8 @@ jest.mock('../../../actions/search');
 mockActionCreator(searchQueryUpdate);
 
 describe('SeminarStartDateFilterContainer', () => {
+  // TODO: mock this directly and remoe the direct assignment
+  // eslint-disable-next-line no-import-assign
   constants.LOCAL_TIMEZONE = 'Europe/Zurich';
 
   it('passes seminar search query start_date', () => {

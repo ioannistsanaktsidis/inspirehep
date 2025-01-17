@@ -91,6 +91,7 @@ describe('AuthorPublicationsContainer', () => {
   });
 
   it('set assignDifferentProfileView when user has a profile', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = { ASSIGN_DIFFERENT_PROFILE_UI_FEATURE_FLAG: true };
     const store = getStoreWithState({
       user: fromJS({
@@ -122,6 +123,7 @@ describe('AuthorPublicationsContainer', () => {
   });
 
   it('set assignViewNoProfile when user logged_in', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = { ASSIGN_NO_PROFILE_UI_FEATURE_FLAG: true };
     const store = getStoreWithState({
       authors: fromJS({
@@ -145,6 +147,7 @@ describe('AuthorPublicationsContainer', () => {
   });
 
   it('set assignViewNoProfile when user logged_in', () => {
+    // eslint-disable-next-line no-undef
     global.CONFIG = { ASSIGN_NOT_LOGGED_IN_FEATURE_FLAG: true };
     const store = getStoreWithState({
       authors: fromJS({
@@ -173,7 +176,7 @@ describe('AuthorPublicationsContainer', () => {
         ...initialState,
         publicationSelection: {
           papersIds: [1234, 12345],
-          selected: true
+          selected: true,
         },
       }),
     });
