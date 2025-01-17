@@ -2,73 +2,29 @@
   "root": true,
   "parser": "babel-eslint",
   "plugins": ["react-hooks"],
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+  ],
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
   },
   "rules": {
-    "func-names": "off",
-    "no-plusplus": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
-    "no-underscore-dangle": [
-      "error",
-      {
-        "allow": ["_source", "_id"]
-      }
-    ],
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": ["Link"],
-        "specialLink": ["to", "hrefLeft", "hrefRight"],
-        "aspects": ["noHref", "invalidHref", "preferButton"]
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "off",
-      {
-        "devDependencies": ["**/*.test.jsx?"]
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "react/no-unused-prop-types": "off",
-    "react/require-default-props": "off",
-    "react/prop-types": "off",
-    "react/forbid-prop-types": "off",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/destructuring-assignment": "off",
-    "react/prefer-stateless-function": "off",
+    "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
-    "react/jsx-no-target-blank": "off",
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
-    "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/click-events-have-key-events": "off"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "react/forbid-prop-types": "off"
   },
   "overrides": [
     {
       "files": ["src/middlewares/*.js"],
       "rules": {
-        "arrow-body-style": "off"
-      }
+        "arrow-body-style": "off",
+      },
     },
     {
       "files": ["*.ts", "*.tsx"],
@@ -88,15 +44,15 @@
         "react/jsx-no-target-blank": "off",
         "import/no-cycle": "off",
         "jsx-a11y/no-static-element-interactions": "off",
-        "jsx-a11y/click-events-have-key-events": "off"
-      }
-    }
+        "jsx-a11y/click-events-have-key-events": "off",
+      },
+    },
   ],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  }
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
 }
