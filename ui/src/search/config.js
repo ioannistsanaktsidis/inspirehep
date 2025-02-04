@@ -22,6 +22,7 @@ import {
   JOURNAL_PAPERS_NS,
   CURATE_REFERENCE_NS,
   BACKOFFICE_SEARCH_NS,
+  AUTHOR_DATA_NS,
 } from './constants';
 import {
   onLiteratureQueryChange,
@@ -32,6 +33,7 @@ import {
   onEmbeddedSearchWithAggregationsQueryChange,
   onEmbeddedSearchWithoutAggregationsQueryChange,
   onBackofficeQueryChange,
+  onEmbeddedDataQueryChange,
 } from './queryChange';
 
 const defaultPersistedQueryParamsDuringNewSearch = ['size'];
@@ -120,6 +122,12 @@ const searchConfig = {
     persistedQueryParamsDuringNewSearch:
       defaultPersistedQueryParamsDuringNewSearch,
     onQueryChange: onEmbeddedSearchWithAggregationsQueryChange,
+    redirectableError: false,
+  },
+  [AUTHOR_DATA_NS]: {
+    persistedQueryParamsDuringNewSearch:
+      defaultPersistedQueryParamsDuringNewSearch,
+    onQueryChange: onEmbeddedDataQueryChange,
     redirectableError: false,
   },
   [JOURNALS_NS]: {

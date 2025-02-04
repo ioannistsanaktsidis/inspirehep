@@ -22,6 +22,7 @@ import {
   JOURNAL_PAPERS_NS,
   CURATE_REFERENCE_NS,
   BACKOFFICE_SEARCH_NS,
+  AUTHOR_DATA_NS,
 } from './constants';
 import {
   START_DATE_UPCOMING,
@@ -101,6 +102,9 @@ const namespacesState = {
     baseAggregationsQuery: {
       facet_name: 'hep-author-citations',
     },
+  },
+  [AUTHOR_DATA_NS]: {
+    ...initialNamespaceState,
   },
   [CONFERENCE_CONTRIBUTIONS_NS]: {
     ...initialNamespaceState,

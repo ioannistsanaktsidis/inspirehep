@@ -50,6 +50,7 @@ import { APIButton } from '../../../common/components/APIButton';
 import InspireID from '../../components/InspireID';
 import AuthorBlueskyAction from '../../components/AuthorBlueskyAction';
 import AuthorMastodonAction from '../../components/AuthorMastodonAction';
+import AuthorDataContainer from '../AuthorDataContainer';
 
 function DetailPage({
   record,
@@ -121,6 +122,8 @@ function DetailPage({
     [metadata]
   );
 
+  const canAccessDataTab = isCatalogerLoggedIn || isSuperUserLoggedIn;
+
   let tabItems = [
     {
       label: (
@@ -170,6 +173,25 @@ function DetailPage({
         children: (
           <ContentBox className="remove-top-border-of-card">
             <AuthorSeminars />
+          </ContentBox>
+        ),
+      },
+    ];
+  }
+
+  if (canAccessDataTab) {
+    tabItems = [
+      ...tabItems,
+      {
+        label: (
+          <Tooltip title="Datasets from the author">
+            <span>Datasets</span>
+          </Tooltip>
+        ),
+        key: seminarsCount > 0 ? '4' : '3',
+        children: (
+          <ContentBox className="remove-top-border-of-card">
+            <AuthorDataContainer />
           </ContentBox>
         ),
       },
