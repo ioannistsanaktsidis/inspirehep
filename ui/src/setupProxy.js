@@ -1,7 +1,7 @@
 const proxy = require('http-proxy-middleware');
 
 const localProxy = proxy({
-  target: 'http://hep-web:8000',
+  target: 'https://inspirebeta.net',
   secure: false,
   changeOrigin: true,
 });
